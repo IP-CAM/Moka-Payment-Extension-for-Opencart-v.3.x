@@ -1,6 +1,6 @@
 # Moka - Opencart
 
-![image](https://optimisthub.com/cdn/moka/moka-api-php-client.png)
+![image](https://optimisthub.com/cdn/moka/moka-opencart-plugin.png)
 
 ## Requirements
 
