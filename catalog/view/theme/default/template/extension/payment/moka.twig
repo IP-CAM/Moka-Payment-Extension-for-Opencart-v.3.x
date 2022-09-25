@@ -1,0 +1,38 @@
+<div>
+    <h1>Moka Payment</h1>
+
+    <label>CardHolderFullName</label>
+    <input type="text" name="card_holder_fullname">
+
+    <label>CardNumber</label>
+    <input type="text" name="card_number">
+
+    <label>ExpMonth</label>
+    <input type="text" name="exp_month">
+
+    <label>ExpYear</label>
+    <input type="text" name="exp_year">
+
+    <label>CvcNumber</label>
+    <input type="text" name="cvc_number">
+
+    <input type="button" value="{{ button_confirm }}" id="button-confirm" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#button-confirm').click(function() {
+      $.ajax({
+          url: '{{ checkout }}',
+          type: 'post',
+          dataType: 'json',
+          success: function(json) {
+            window.location.replace(json.Url);
+          },
+          error: function(xhr, ajaxOptions, thrownError) {
+            showError(xhr.statusText + ': ' + thrownError + '; ' + xhr.responseText);
+          }
+      });
+    });
+  });
+</script>
